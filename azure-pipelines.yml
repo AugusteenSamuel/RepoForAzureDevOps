@@ -1,4 +1,4 @@
-# Starter pipeline
+  # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -49,35 +49,28 @@ stages:
 #  2. DEPLOY TO DEV
 - stage: Deploy_Dev
   dependsOn: Build
-  jobs:
-  - deployment: DeployDev
-    environment: 'Dev'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - script: echo "Deploying to Dev"
 
+  jobs:
+  - job: DeployDev
+
+    steps:
+    - script: echo "Deploying to Dev"
 #  3. DEPLOY TO QA
 - stage: Deploy_QA
   dependsOn: Deploy_Dev
   jobs:
-  - deployment: DeployQA
-    environment: 'QA'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - script: echo "Deploying to QA"
+  - job: DeployProd
+
+    steps:
+    - script: echo "Deploying to Prod"
 
 #  4. DEPLOY TO PROD
 - stage: Deploy_Prod
   dependsOn: Deploy_QA
+
+
   jobs:
-  - deployment: DeployProd
-    environment: 'Prod'
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-          - script: echo "Deploying to Prod"
+  - job: DeployProd
+
+    steps:
+    - script: echo "Deploying to Prod"
