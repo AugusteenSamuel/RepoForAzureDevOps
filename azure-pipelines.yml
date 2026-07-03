@@ -70,7 +70,10 @@ stages:
 
 
   jobs:
-  - job: DeployProd
-
-    steps:
-    - script: echo "Deploying to Prod"
+  - deployment: DeployProd   
+    environment: 'Production'      
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo "Deploying to Production"
