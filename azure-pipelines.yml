@@ -108,22 +108,24 @@ stages:
     - task: PowerShell@2
       displayName: 'Validate Customers API'
 
+    
       inputs:
-        targetType: 'inline'
-
+        targetType: inline
         script: |
 
-          $baseUrl = "https://aecsazuredevopslogicapp.azurewebsites.net"
+          $url = "https://aecsazuredevopslogicapp.azurewebsites.net/api/customers"
 
-          Write-Host "Testing GET Customers"
-
-          $response = Invoke-WebRequest `
-            -Uri "$baseUrl/api/Customers" `
-            -Method Get
-
-          if($response.StatusCode -ne 200)
+          try
           {
-            throw "GET Customers Failed"
+              $response = Invoke-RestMethod -Uri $url -Method Get
+
+              Write-Host "✅ API Functional Test Passed"
           }
+          catch
+          {
+              Write-Error "❌ API Functional Test Failed"
+              throw
+          }
+
 
           Write-Host "GET Customers Passed"
