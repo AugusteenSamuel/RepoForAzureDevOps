@@ -156,7 +156,7 @@ stages:
             -Uri "$baseUrl/$customerId" `
             -Method Get
 
-          if ($customer.id -eq 912)
+          if ($customer.id -eq $customerId)
           {
               Write-Host "Verification Passed"
           }
