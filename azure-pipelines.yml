@@ -153,7 +153,7 @@ stages:
           Write-Host "POST Success"
 
           $customer = Invoke-RestMethod `
-            -Uri "$baseUrl/666" `
+            -Uri "$baseUrl/$customerId" `
             -Method Get
 
           if ($customer.id -eq $customerId)
