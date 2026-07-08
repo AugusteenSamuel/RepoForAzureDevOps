@@ -164,3 +164,46 @@ stages:
           {
               throw "Verification Failed"
           }
+# =============================
+# NON FUNCTIONAL TEST
+# =============================
+- stage: NonFunctionalTest
+
+  displayName: Performance Test
+
+  dependsOn: APIFunctionalTest
+
+  jobs:
+
+  - job: PerformanceValidation
+
+    steps:
+
+    - task: PowerShell@2
+      displayName: 'API Response Time Test'
+
+      inputs:
+        targetType: inline
+        script: |
+
+          $url = "https://aecsazuredevopslogicapp.azurewebsites.net/api/customers"
+
+          $watch = [System.Diagnostics.Stopwatch]::StartNew()
+
+          Invoke-RestMethod `
+            -Uri $url `
+            -Method Get
+
+          $watch.Stop()
+
+          $elapsed = $watch.ElapsedMilliseconds
+
+          Write-Host "Response Time = $elapsed ms"
+
+          if($elapsed -gt 3000)
+          {
+              throw "Performance Test Failed. Response took more than 3 seconds."
+          }
+
+          Write-Host "Performance Test Passed"
+
