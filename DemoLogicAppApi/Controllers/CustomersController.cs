@@ -29,10 +29,10 @@ namespace DemoAngularCrudApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-          if (_context.Customers == null)
-          {
-              return NotFound();
-          }
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
             return await _context.Customers.ToListAsync();
         }
 
@@ -42,10 +42,10 @@ namespace DemoAngularCrudApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
-          if (_context.Customers == null)
-          {
-              return NotFound();
-          }
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
             var customer = await _context.Customers.FindAsync(id);
 
             if (customer == null)
@@ -100,10 +100,10 @@ namespace DemoAngularCrudApi.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
-          if (_context.Customers == null)
-          {
-              return Problem("Entity set 'AngCustDBContext.Customers'  is null.");
-          }
+            if (_context.Customers == null)
+            {
+                return Problem("Entity set 'AngCustDBContext.Customers'  is null.");
+            }
             _context.Customers.Add(customer);
             try
             {
@@ -151,4 +151,30 @@ namespace DemoAngularCrudApi.Controllers
             return (_context.Customers?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
+    [ApiController]
+[Route("api/[controller]")]
+public class CustomerController : ControllerBase
+{
+    private readonly IConfiguration _configuration;
+
+    public CustomerController(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
+
+    [HttpGet("discount")]
+    public IActionResult GetDiscount()
+    {
+        bool featureEnabled =
+            _configuration.GetValue<bool>(
+                "FeatureManagement:EnableDiscountFeature");
+
+        if (featureEnabled)
+        {
+            return Ok("New Discount Feature Enabled");
+        }
+
+        return Ok("Old Logic Running");
+    }
+}
 }

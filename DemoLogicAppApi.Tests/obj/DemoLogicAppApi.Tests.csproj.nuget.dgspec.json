@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\DemoLogicAppApi.Tests\\DemoLogicAppApi.Tests.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\demologicappapi.tests\\DemoLogicAppApi.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\DemoLogicAppApi.Tests\\DemoLogicAppApi.Tests.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\demologicappapi.tests\\DemoLogicAppApi.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\DemoLogicAppApi.Tests\\DemoLogicAppApi.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\demologicappapi.tests\\DemoLogicAppApi.Tests.csproj",
         "projectName": "DemoLogicAppApi.Tests",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\DemoLogicAppApi.Tests\\DemoLogicAppApi.Tests.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\demologicappapi.tests\\DemoLogicAppApi.Tests.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\DemoLogicAppApi.Tests\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\AzureDevOps\\Demos\\demologicappapi.tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
