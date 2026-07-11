@@ -12,7 +12,7 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoLogicAppApi.Tests")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ebb7835ce3f5fc9d57b9421ec66592ec1bf1bcaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemoLogicAppApi.Tests")]
