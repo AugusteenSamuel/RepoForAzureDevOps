@@ -89,10 +89,10 @@ stages:
               appType: 'webApp'
               appName: 'demodevops777'
  
-              deployToSlotOrASE: true
+              
  
-              resourceGroupName: 'rg_samazuredevops'
+             
  
-              slotName: 'staging-qa'
+              
  
               package: '$(Pipeline.Workspace)/drop/**/*.zip'
