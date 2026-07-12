@@ -88,11 +88,4 @@ stages:
               azureSubscription: 'demodevops777'
               appType: 'webApp'
               appName: 'demodevops777'
- 
-              
- 
-             
- 
-              
- 
               package: '$(Pipeline.Workspace)/drop/**/*.zip'
