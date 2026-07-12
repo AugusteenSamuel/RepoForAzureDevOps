@@ -87,7 +87,7 @@ stages:
  
               azureSubscription: 'demodevops777'
               appType: 'webApp'
-              appName: 'samaecsazuredevopslogicapp'
+              appName: 'demodevops777'
  
               deployToSlotOrASE: true
  
