@@ -85,7 +85,7 @@ stages:
  
             inputs:
  
-              azureSubscription: 'AugusteenSamuel'
+              azureSubscription: 'demodevops777'
               appType: 'webApp'
               appName: 'samaecsazuredevopslogicapp'
  
