@@ -85,7 +85,7 @@ stages:
  
             inputs:
  
-              azureSubscription: 'WP_SL_User_180'
+              azureSubscription: 'WP_Subscription_0188'
               appType: 'webApp'
               appName: 'samaecsazuredevopslogicapp'
  
