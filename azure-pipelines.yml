@@ -85,7 +85,7 @@ stages:
  
             inputs:
  
-              azureSubscription: 'myservice-connection'
+              azureSubscription: 'WP_SL_User_180'
               appType: 'webApp'
               appName: 'samaecsazuredevopslogicapp'
  
