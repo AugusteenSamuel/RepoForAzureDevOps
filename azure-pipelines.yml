@@ -84,9 +84,9 @@ stages:
  
             inputs:
  
-              azureSubscription: 'aecsazuredevopslogicappsam'
+              azureSubscription: 'demodevops777'
               appType: 'webApp'
-              appName: 'aecsazuredevopslogicappsam'
+              appName: 'demodevops777'
  
               deployToSlotOrASE: true
  
