@@ -84,13 +84,13 @@ stages:
  
             inputs:
  
-              azureSubscription: 'demodevops777'
+              azureSubscription: 'aecsazuredevopslogicappsam'
               appType: 'webApp'
-              appName: 'demodevops777'
+              appName: 'aecsazuredevopslogicappsam'
  
               deployToSlotOrASE: true
  
-              resourceGroupName: 'WP_SL_User_180'
+              resourceGroupName: 'rg_samazuredevops'
  
               slotName: 'staging-qa'
  
