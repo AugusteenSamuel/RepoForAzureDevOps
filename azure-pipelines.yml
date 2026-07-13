@@ -10,7 +10,7 @@ variables:
 stages:
  
 # =============================
-# BUILD
+# 1. BUILD
 # =============================
 - stage: Build
   displayName: Build Application
@@ -55,9 +55,8 @@ stages:
       artifact: drop
  
  
- 
 # =============================
-# QA DEPLOYMENT
+# 2 DEPLOY TO QA
 # =============================
 - stage: DeployQA
  
@@ -67,7 +66,7 @@ stages:
  
   jobs:
  
-  - deployment: QADeploy
+  - deployment: DeployQA
  
     environment: QA
  
@@ -85,10 +84,16 @@ stages:
  
             inputs:
  
-              azureSubscription: 'demodevops777'
+              azureSubscription: 'aecsazuredevopslogicappsam'
               appType: 'webApp'
-              appName: 'demodevops777'
-              package: '$(Pipeline.Workspace)/drop/**/*.zip'
+              appName: 'aecsazuredevopslogicappsam'
+ 
               deployToSlotOrASE: true
-              resourceGroupName: 'rg_samazuredevops'
+ 
+              resourceGroupName: 'WP_SL_User_180'
+ 
               slotName: 'staging-qa'
+ 
+              package: '$(Pipeline.Workspace)/drop/**/*.zip'
+
+ 
